@@ -1,4 +1,3 @@
-
 apiVersion: acme.com/v1
 kind: Postgres
 metadata:
@@ -22,3 +21,15 @@ envSecrets:
   POSTGRES_PASSWORD:
     name: ${ref://postgres.acme.com/voting-database/passwordSecret}
     key: ${ref://postgres.acme.com/voting-database/passwordKey}
+---
+apiVersion: acme.com/v1
+kind: Cron
+metadata:
+  name: ping
+schedule: "* * * * *"
+image: busybox:1.28
+command:
+  - /bin/sh
+  - -c
+  - date; echo World
+
