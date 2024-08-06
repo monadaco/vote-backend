@@ -26,7 +26,7 @@ apiVersion: acme.com/v1
 kind: Cron
 metadata:
   name: ping
-schedule: "* * * * *"
+schedule: "* * *1 * *"
 image: busybox:1.28
 command:
   - /bin/sh
