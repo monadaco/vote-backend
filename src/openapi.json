@@ -75,7 +75,9 @@
                     "description": "The choice being voted for."
                   }
                 },
-                "required": ["vote"]
+                "required": [
+                  "vote"
+                ]
               }
             }
           }
