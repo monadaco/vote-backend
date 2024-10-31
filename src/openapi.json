@@ -41,10 +41,12 @@
                     "type": "object",
                     "properties": {
                       "id": {
-                        "type": "integer"
+                        "type": "integer",
+                        "description": "Unique identifier for the vote"
                       },
                       "choice": {
-                        "type": "string"
+                        "type": "string",
+                        "description": "The choice that was voted for"
                       }
                     }
                   }
@@ -70,7 +72,8 @@
                 "type": "object",
                 "properties": {
                   "vote": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Choice to vote for"
                   }
                 },
                 "required": ["vote"]
