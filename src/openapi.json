@@ -79,9 +79,7 @@
                     "description": "Choice to vote for"
                   }
                 },
-                "required": [
-                  "vote"
-                ]
+                "required": ["vote"]
               }
             }
           }
