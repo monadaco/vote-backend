@@ -52,17 +52,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "integer",
-                        "description": "Unique identifier for the vote"
-                      },
-                      "choice": {
-                        "type": "string",
-                        "description": "The choice that was voted for"
-                      }
-                    }
+                    "$ref": "#/components/schemas/Vote"
                   }
                 }
               }
