@@ -1,136 +1,136 @@
 {
-    "openapi": "3.0.0",
-    "info": {
-        "title": "Voting API",
-        "version": "1.0.0",
-        "description": "An API to create and manage votes."
-    },
-    "servers": [
-        {
-            "url": "http://localhost:3000",
-            "description": "Local server"
-        }
-    ],
-    "paths": {
-        "/setup": {
-            "get": {
-                "summary": "Setup the database",
-                "description": "Creates the votes table in the database if it doesn't already exist.",
-                "operationId": "setupDatabase",
-                "responses": {
-                    "200": {
-                        "description": "Setup completed successfully"
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "string"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/results": {
-            "get": {
-                "summary": "Get voting results",
-                "description": "Retrieves all votes from the database.",
-                "operationId": "getResults",
-                "responses": {
-                    "200": {
-                        "description": "Voting results retrieved successfully",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "id": {
-                                                "type": "integer",
-                                                "description": "Unique identifier for the vote"
-                                            },
-                                            "choice": {
-                                                "type": "string",
-                                                "description": "The choice that was voted for"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "string"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/cast": {
-            "post": {
-                "summary": "Cast a vote",
-                "description": "Submits a vote into the database.",
-                "operationId": "castVote",
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "vote": {
-                                        "type": "string",
-                                        "description": "Choice to vote for"
-                                    }
-                                },
-                                "required": [
-                                    "vote"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Vote cast successfully"
-                    },
-                    "500": {
-                        "description": "Internal server error",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "string"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Voting API",
+    "version": "1.0.0",
+    "description": "An API to create and manage votes."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local server"
     }
+  ],
+  "paths": {
+    "/setup": {
+      "get": {
+        "summary": "Setup the database",
+        "description": "Creates the votes table in the database if it doesn't already exist.",
+        "operationId": "setupDatabase",
+        "responses": {
+          "200": {
+            "description": "Setup completed successfully"
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/results": {
+      "get": {
+        "summary": "Get voting results",
+        "description": "Retrieves all votes from the database.",
+        "operationId": "getResults",
+        "responses": {
+          "200": {
+            "description": "Voting results retrieved successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "description": "Unique identifier for the vote"
+                      },
+                      "choice": {
+                        "type": "string",
+                        "description": "The choice that was voted for"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cast": {
+      "post": {
+        "summary": "Cast a vote",
+        "description": "Submits a vote into the database.",
+        "operationId": "castVote",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "vote": {
+                    "type": "string",
+                    "description": "Choice to vote for"
+                  }
+                },
+                "required": [
+                  "vote"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Vote cast successfully"
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
