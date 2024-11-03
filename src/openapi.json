@@ -14,7 +14,9 @@
   "paths": {
     "/setup": {
       "get": {
-        "tags": ["Setup"],
+        "tags": [
+          "Setup"
+        ],
         "summary": "Initialize the database with the votes table",
         "operationId": "setupDatabase",
         "responses": {
@@ -29,7 +31,9 @@
     },
     "/results": {
       "get": {
-        "tags": ["Votes"],
+        "tags": [
+          "Votes"
+        ],
         "summary": "Retrieve all votes",
         "operationId": "getAllVotes",
         "responses": {
@@ -54,7 +58,9 @@
     },
     "/cast": {
       "post": {
-        "tags": ["Votes"],
+        "tags": [
+          "Votes"
+        ],
         "summary": "Cast a vote",
         "operationId": "castVote",
         "requestBody": {
@@ -101,7 +107,9 @@
             "description": "The option to cast a vote for"
           }
         },
-        "required": ["vote"]
+        "required": [
+          "vote"
+        ]
       }
     }
   }
