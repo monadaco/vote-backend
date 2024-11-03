@@ -78,10 +78,12 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Unique identifier for the vote"
           },
           "choice": {
-            "type": "string"
+            "type": "string",
+            "description": "The chosen option for this vote"
           }
         }
       },
@@ -89,7 +91,8 @@
         "type": "object",
         "properties": {
           "vote": {
-            "type": "string"
+            "type": "string",
+            "description": "The option to cast a vote for"
           }
         },
         "required": [
