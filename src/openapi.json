@@ -89,7 +89,10 @@
             "description": "The chosen option for this vote"
           }
         },
-        "required": ["id", "choice"]
+        "required": [
+          "id",
+          "choice"
+        ]
       },
       "CastVote": {
         "type": "object",
@@ -99,7 +102,9 @@
             "description": "The option to cast a vote for"
           }
         },
-        "required": ["vote"]
+        "required": [
+          "vote"
+        ]
       }
     }
   }
