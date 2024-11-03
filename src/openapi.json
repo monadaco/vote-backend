@@ -98,9 +98,7 @@
             "description": "The option to cast a vote for"
           }
         },
-        "required": [
-          "vote"
-        ]
+        "required": ["vote"]
       }
     }
   }
