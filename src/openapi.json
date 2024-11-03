@@ -15,6 +15,7 @@
     "/setup": {
       "get": {
         "summary": "Initialize the database with the votes table",
+        "operationId": "setupDatabase",
         "responses": {
           "200": {
             "description": "Table created successfully"
@@ -28,6 +29,7 @@
     "/results": {
       "get": {
         "summary": "Retrieve all votes",
+        "operationId": "getAllVotes",
         "responses": {
           "200": {
             "description": "A list of votes",
@@ -51,6 +53,7 @@
     "/cast": {
       "post": {
         "summary": "Cast a vote",
+        "operationId": "castVote",
         "requestBody": {
           "required": true,
           "content": {
