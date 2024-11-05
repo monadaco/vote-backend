@@ -1,0 +1,96 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Voting API",
+    "version": "1.0.0",
+    "description": "API for casting and retrieving voting results."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/setup": {
+      "get": {
+        "summary": "Setup the votes table",
+        "operationId": "setupTable",
+        "responses": {
+          "200": {
+            "description": "Table setup successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/results": {
+      "get": {
+        "summary": "Get voting results",
+        "operationId": "getResults",
+        "responses": {
+          "200": {
+            "description": "A list of all votes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer",
+                        "description": "The ID of the vote"
+                      },
+                      "choice": {
+                        "type": "string",
+                        "description": "The vote choice"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/cast": {
+      "post": {
+        "summary": "Cast a vote",
+        "operationId": "castVote",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["vote"],
+                "properties": {
+                  "vote": {
+                    "type": "string",
+                    "description": "The choice to vote for"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Vote cast successfully"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
