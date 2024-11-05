@@ -70,7 +70,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["vote"],
+                "required": [
+                  "vote"
+                ],
                 "properties": {
                   "vote": {
                     "type": "string",
